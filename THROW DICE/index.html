@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #winner{
+            height: 50px;
+            width: 190px;
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            border-radius: 6px;
+            margin: auto;
+            margin-top: 140px;
+            font-size: 40px;
+            text-align: center;
+        }
+        #container{
+            height: 300px;
+            width: 60%;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #member-1{
+            height: 160px;
+            width: 31%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 110px;
+            border-radius: 10px;
+        }
+        #member-2{
+            height: 160px;
+            width: 31%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 110px;
+            border-radius: 10px;
+        }
+        #member-3{
+            height: 160px;
+            width: 31%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 110px;
+            border-radius: 10px;
+        }
+        #roll{
+            padding: 20px;
+            margin-left: 45%;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="winner">Member 1</div>
+    <div id="container">
+       <div id="member-1" style="background-color: green;">4</div>
+       <div id="member-2" style="background-color: yellow;">2</div>
+       <div id="member-3" style="background-color: red;">1</div>
+    </div>
+    <button onclick="myfunction()" id="roll">ROLL THE DICE</button>
+
+
+<script>
+    document.querySelector("#member-1").innerText = "  DICE";
+    document.querySelector("#member-2").innerText ="  DICE";
+    document.querySelector("#member-3").innerText = "  DICE";
+
+  
+    function myfunction(){
+        //console.log("Someone clicked me");
+    var x = document.querySelector("#member-1").innerHTML =  Math.floor(Math.random() * 6 + 1);
+    var y = document.querySelector("#member-2").innerHTML =  Math.floor(Math.random() * 6 + 1);
+    var z = document.querySelector("#member-3").innerHTML =  Math.floor(Math.random() * 6 + 1);
+
+    if(x>y && x>z && y>z){
+        console.log("Member 1");
+    var winner1 = document.querySelector("#winner")
+    winner1.innerText = "Member 1";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "green";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "yellow";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "red";
+    }
+
+    else if(x>y && x>z && z>y){
+        console.log("Member 1");
+    var winner2 = document.querySelector("#winner")
+    winner2.innerText = "Member 1";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "green";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "red";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "yellow";
+    }
+
+    else if(y>x && y>z && x>z){
+        console.log("Member 2");
+    var winner3 = document.querySelector("#winner")
+    winner3.innerText = "Member 2";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "yellow";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "green";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "red";
+    }
+
+    else if(y>x && y>z && z>x){
+        console.log("Member 2");
+    var winner4 = document.querySelector("#winner")
+    winner4.innerText = "Member 2";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "red";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "green";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "yellow";
+    }
+
+    else if(z>x && z>y && x>y){
+        console.log("Member 3");
+    var winner5 = document.querySelector("#winner")
+    winner5.innerText = "Member 3";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "yellow";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "red";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "green";
+    }
+
+    else if(z>x && z>y && y>x){
+        console.log("Member 3");
+    var winner6 = document.querySelector("#winner")
+    winner6.innerText = "Member 3";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "red";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "yellow";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "green";
+    }
+
+    else if(x==y && y==z && z==x){
+        console.log("Tie");
+    var winner7 = document.querySelector("#winner")
+    winner7.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "blue";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "blue";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "blue";
+    }
+
+    else if(x==y && z>x && z>y){
+        console.log("Tie");
+    var winner8 = document.querySelector("#winner")
+    winner8.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "blue";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "blue";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "green";
+    }
+
+    else if(y==z && x>y && x>z){
+        console.log("Tie");
+    var winner9 = document.querySelector("#winner")
+    winner9.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "green";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "blue";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "blue";
+    }
+
+    else if(x==z && y>x && y>z){
+        console.log("Tie");
+    var winner10 = document.querySelector("#winner")
+    winner10.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "blue";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "green";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "blue";
+    }
+
+    else if(x==y && z<x && z<y){
+        console.log("Tie");
+    var winner11 = document.querySelector("#winner")
+    winner11.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "blue";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "blue";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "red";
+    }
+
+    else if(y==z && x<y && x<z){
+        console.log("Tie");
+    var winner12 = document.querySelector("#winner")
+    winner12.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "red";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "blue";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "blue";
+    }
+
+    else if(x==z && y<x && y<z){
+        console.log("Tie");
+    var winner13 = document.querySelector("#winner")
+    winner13.innerText = "Tie";
+    var color1 = document.querySelector("#member-1");
+    color1.style.backgroundColor = "blue";
+    var color2 = document.querySelector("#member-2");
+    color2.style.backgroundColor = "red";
+    var color3 = document.querySelector("#member-3");
+    color3.style.backgroundColor = "blue";
+    }
+  }
+</script>
+</body>
+</html>
